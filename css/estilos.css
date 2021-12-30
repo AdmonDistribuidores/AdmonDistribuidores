@@ -198,11 +198,12 @@ lottie-player {
 }
 
 .pago {
-	position: relative;
+	position: absolute;
 	text-decoration: none;
 	color: rgb(115, 255, 0);
+	top: 97px;
+	right: 10px;	
 }
-
 .pago img {
 	position: fixed;
 	width: 32px;
