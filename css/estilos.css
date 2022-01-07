@@ -120,8 +120,8 @@ lottie-player {
 	text-align: center;
 
 }
-.informacion img {
-	width: 40%;
+.informacion .logo {
+	width: 45%;
 }
 
 .informacion .titulo  {
@@ -260,27 +260,53 @@ lottie-player {
 }
 
 /* ----- ----- portafolios ----- ----- */
+
 .portafolio {
 	text-align: center;
 	display: none;
 }
-.portafolio .cata1 img {
-	width: 40%;
+
+.portafolio .logo {
+	width: 45%;
 }
+
 .portafolio .texto1 {
 	text-align: center;
 	font-size: 18px;
 	padding: 0px 15px;
 }
+.portafolio .bt2 {
+	width: 100%;
+	padding: 0px 27%;
+}
+
+
+.portafolio .btncata {
+	background: linear-gradient(102deg, #0099ff 40%, #0099ffd2 60%);
+	color: #fffffff1;
+	font-size: 14px;
+	text-align: center;
+	text-decoration: none;
+	padding: 7px 10px;
+	border-radius: 10px;
+	display: block;
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, .5)
+	
+}
+.btncata:hover {
+	background: linear-gradient(102deg, #0099ffa8 40%, #0099ff85 60%);
+	color: #ffffff;
+}
+
 .boton2 {
 	background: linear-gradient(102deg, #0099ff 40%, #0099ffd2 60%);
 	color: #fffffff1;
-	font-size: 16px;
+	font-size: 14px;
 	text-align: center;
 	text-decoration: none;
-	padding: 10px 10%;
+	padding: 7px 10%;
 	border-radius: 10px;
-	box-shadow: 0 0 0 0 rgba(0, 0, 0, .5);
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, .5)
 	
 }
 
@@ -309,7 +335,8 @@ lottie-player {
 
 
 /* ----- ----- Bioseguridad ----- ----- */
-.Bioseguridad {
+
+.Absorbentes {
 	text-align: center;
 	padding: 0px 10px;
 	display: none;
@@ -317,22 +344,22 @@ lottie-player {
 	
 }
 
-.Bioseguridad img {
+.Absorbentes img {
 	width: 50%;
 	vertical-align: top;
 	border-radius: 10px;
 }
 
-.Bioseguridad p {
+.Absorbentes p {
 	font-size: 16px;
 	padding: 2px 2px;
 }
 
-.Bioseguridad a {
+.Absorbentes a {
 	font-size: 12px;
 }
 
-.Bioseguridad .oro {
+.Absorbentes .oro {
 	border-radius: 10px;
 	overflow: hidden;
 	padding: 10px 5px;
@@ -343,7 +370,7 @@ lottie-player {
 
 	}
 	
-.Bioseguridad .platino {
+.Absorbentes .platino {
 		border-radius: 10px;
 		overflow: hidden;
 		padding: 10px 5px;
@@ -351,7 +378,7 @@ lottie-player {
 		backdrop-filter: blur(2px);
 	
 		}
-.Bioseguridad .diamante {
+.Absorbentes .diamante {
 			border-radius: 10px;
 			overflow: hidden;
 			padding: 10px 5px;
@@ -556,7 +583,7 @@ footer .rango {
 
 @media screen  and  (min-width: 800px){
 	body { 
-		background: url('../img/fondo2.jpg');
+		background: url('../img/bg2.png');
 		background-size: cover;
 		background-repeat: no-repeat;
 	}
