@@ -3,7 +3,7 @@ function inicio() {
     document.getElementById("informacion").style.display = "block";	
     document.getElementById("portafolio").style.display = "none";
     document.getElementById("back").style.display = "none";
-    document.getElementById("Bioseguridad").style.display = "none";
+    document.getElementById("Absorbentes").style.display = "none";
     document.getElementById("desinfectantes").style.display = "none";
     document.getElementById("screen4").style.display = "none";
     document.getElementById("side").style.display = "none";
@@ -38,7 +38,7 @@ else{
 function catalogos() {
     document.getElementById("informacion").style.display = "none";	
     document.getElementById("portafolio").style.display = "block";
-    document.getElementById("Bioseguridad").style.display = "none";
+    document.getElementById("Absorbentes").style.display = "none";
     document.getElementById("back").style.display = "block";
     document.getElementById("side").style.display = "none";
     document.getElementById("informacion").style.display = "none";
@@ -53,7 +53,7 @@ function catalogos() {
 function Bioseguridad() {
     document.getElementById("informacion").style.display = "none";	
     document.getElementById("portafolio").style.display = "none";
-    document.getElementById("Bioseguridad").style.display = "block";
+    document.getElementById("Absorbentes").style.display = "block";
     document.getElementById("back").style.display = "block";
     document.getElementById("side").style.display = "none";
     document.getElementById("informacion").style.display = "none";
@@ -71,7 +71,7 @@ function desinfectantes() {
     document.getElementById("side").style.display = "none";
     document.getElementById("informacion").style.display = "none";
     document.getElementById("back").style.display = "block";
-    document.getElementById("Bioseguridad").style.display = "none";
+    document.getElementById("Absorbentes").style.display = "none";
     document.getElementById("screen4").style.display = "none";
     document.getElementById("limpieza").style.display = "none";
     conta=0;
@@ -86,7 +86,7 @@ function limpieza() {
     document.getElementById("side").style.display = "none";
     document.getElementById("informacion").style.display = "none";
     document.getElementById("back").style.display = "block";
-    document.getElementById("Bioseguridad").style.display = "none";
+    document.getElementById("Absorbentes").style.display = "none";
     document.getElementById("screen4").style.display = "none";
     conta=0;
     contador=2;    
@@ -100,7 +100,7 @@ function planes() {
     document.getElementById("informacion").style.display = "none";
     document.getElementById("back").style.display = "block";
     document.getElementById("desinfectantes").style.display = "none";
-    document.getElementById("Bioseguridad").style.display = "none";
+    document.getElementById("Absorbentes").style.display = "none";
     document.getElementById("limpieza").style.display = "none";
     conta=0;
     contador=3;     
@@ -121,7 +121,7 @@ function back() {
     }
     else{
         document.getElementById("portafolio").style.display = "block";
-        document.getElementById("Bioseguridad").style.display = "none";
+        document.getElementById("Absorbentes").style.display = "none";
         document.getElementById("desinfectantes").style.display = "none";
         document.getElementById("screen4").style.display = "none";
         document.getElementById("limpieza").style.display = "none";
@@ -182,7 +182,7 @@ document.querySelector('.back')
 });
 });
 
-document.querySelector('.Bioseguridad')   
+document.querySelector('.Absorbentes')   
 .addEventListener('click',()=>{
  window.scrollTo({
  top: 0,
