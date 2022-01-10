@@ -302,12 +302,20 @@ lottie-player {
 	background: linear-gradient(102deg, #0099ff 40%, #0099ffd2 60%);
 	color: #fffffff1;
 	font-size: 14px;
+	display: inline-block;
 	text-align: center;
 	text-decoration: none;
-	padding: 7px 10%;
+	padding: 7px 13%;
 	border-radius: 10px;
 	box-shadow: 0 0 0 0 rgba(0, 0, 0, .5)
 	
+}
+
+.whatsapp1 {
+	display: block;
+	font-size: 12px;
+	padding: 12px 0px;
+
 }
 
 .boton2:hover {
@@ -334,58 +342,58 @@ lottie-player {
 
 
 
-/* ----- ----- Bioseguridad ----- ----- */
+/* ----- ----- absorbetes ----- ----- */
 
 .Absorbentes {
 	text-align: center;
 	padding: 0px 10px;
 	display: none;
+	grid-gap: 8px;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(4, auto);
+	grid-template-areas: "tituloab tituloab"
+	                     "producto1 producto2";
 
 	
 }
 
-.Absorbentes img {
-	width: 50%;
-	vertical-align: top;
-	border-radius: 10px;
+.Absorbentes .tituloab {
+	grid-area: tituloab;
+
 }
 
-.Absorbentes p {
-	font-size: 16px;
-	padding: 2px 2px;
-}
-
-.Absorbentes a {
-	font-size: 12px;
-}
-
-.Absorbentes .oro {
+.Absorbentes >div {
 	border-radius: 10px;
 	overflow: hidden;
 	padding: 10px 5px;
-	background-color: rgba(253, 253, 253, 0.274);
+	background-color: rgba(253, 253, 253, 0.363);
 	backdrop-filter: blur(2px);
-	
-	
+}
 
-	}
+.Absorbentes .producto1 {
 	
-.Absorbentes .platino {
-		border-radius: 10px;
-		overflow: hidden;
-		padding: 10px 5px;
-		background-color: rgba(253, 253, 253, 0.274);
-		backdrop-filter: blur(2px);
-	
-		}
-.Absorbentes .diamante {
-			border-radius: 10px;
-			overflow: hidden;
-			padding: 10px 5px;
-			background-color: rgba(253, 253, 253, 0.274);
-			backdrop-filter: blur(2px);
-		
-			}
+	grid-area: producto1;
+}
+
+.Absorbentes  img {
+	width: 62%;
+	vertical-align: top;
+	border-radius: 10px
+}
+
+.Absorbentes .producto2 {
+	grid-area: producto2;
+}
+
+@media screen  and  (max-width: 768px){
+.Absorbentes { grid-template-areas: "tituloab tituloab"
+	                                 "producto1 producto1"
+									 "producto2 producto2"
+									 "producto3 producto3"
+									 "producto4 producto4";}
+
+}
+
 
 /* ----- ----- Desinfectantes ----- ----- */
 

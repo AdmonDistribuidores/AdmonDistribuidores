@@ -50,10 +50,10 @@ function catalogos() {
    
 }
 
-function Bioseguridad() {
+function Absorbentes() {
     document.getElementById("informacion").style.display = "none";	
     document.getElementById("portafolio").style.display = "none";
-    document.getElementById("Absorbentes").style.display = "block";
+    document.getElementById("Absorbentes").style.display = "grid";
     document.getElementById("back").style.display = "block";
     document.getElementById("side").style.display = "none";
     document.getElementById("informacion").style.display = "none";
@@ -93,7 +93,7 @@ function limpieza() {
     
 }
 
-function planes() {
+function cotizar() {
     document.getElementById("screen4").style.display = "block";
     document.getElementById("portafolio").style.display = "none";
     document.getElementById("side").style.display = "none";
@@ -263,13 +263,6 @@ document.querySelector("#submit").addEventListener("click", e => {
         });
         });
 
-        document.querySelector('.side2')   
-        .addEventListener('click',()=>{
-         window.scrollTo({
-         top: 0,
-         behavior: 'smooth'
-        });
-        });
 
         document.querySelector('.side3')   
         .addEventListener('click',()=>{
