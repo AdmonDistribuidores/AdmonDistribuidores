@@ -4,10 +4,10 @@ function inicio() {
     document.getElementById("portafolio").style.display = "none";
     document.getElementById("back").style.display = "none";
     document.getElementById("Absorbentes").style.display = "none";
-    document.getElementById("desinfectantes").style.display = "none";
+    document.getElementById("dispensadores").style.display = "none";
     document.getElementById("screen4").style.display = "none";
     document.getElementById("side").style.display = "none";
-    document.getElementById("limpieza").style.display = "none";
+    document.getElementById("desinfectantes").style.display = "none";
     conta=0;
     contador=0;
 }
@@ -43,51 +43,38 @@ function catalogos() {
     document.getElementById("side").style.display = "none";
     document.getElementById("informacion").style.display = "none";
     document.getElementById("screen4").style.display = "none";
+    document.getElementById("dispensadores").style.display = "none";
     document.getElementById("desinfectantes").style.display = "none";
-    document.getElementById("limpieza").style.display = "none";
     conta=0;
     contador=1;
    
 }
 
 function Absorbentes() {
-    document.getElementById("informacion").style.display = "none";	
     document.getElementById("portafolio").style.display = "none";
     document.getElementById("Absorbentes").style.display = "grid";
     document.getElementById("back").style.display = "block";
     document.getElementById("side").style.display = "none";
-    document.getElementById("informacion").style.display = "none";
-    document.getElementById("screen4").style.display = "none";
-    document.getElementById("desinfectantes").style.display = "none";
-    document.getElementById("limpieza").style.display = "none";
     conta=0;
     contador=2;
    
 }
 
-function desinfectantes() {
+function dispensadores() {
     document.getElementById("portafolio").style.display = "none";
-    document.getElementById("desinfectantes").style.display = "block";
+    document.getElementById("dispensadores").style.display = "grid";
     document.getElementById("side").style.display = "none";
-    document.getElementById("informacion").style.display = "none";
     document.getElementById("back").style.display = "block";
-    document.getElementById("Absorbentes").style.display = "none";
-    document.getElementById("screen4").style.display = "none";
-    document.getElementById("limpieza").style.display = "none";
     conta=0;
     contador=2;    
     
 }
 
-function limpieza() {
-    document.getElementById("limpieza").style.display = "block";
+function desinfectantes() {
+    document.getElementById("desinfectantes").style.display = "grid";
     document.getElementById("portafolio").style.display = "none";
-    document.getElementById("desinfectantes").style.display = "none";
     document.getElementById("side").style.display = "none";
-    document.getElementById("informacion").style.display = "none";
     document.getElementById("back").style.display = "block";
-    document.getElementById("Absorbentes").style.display = "none";
-    document.getElementById("screen4").style.display = "none";
     conta=0;
     contador=2;    
     
@@ -99,9 +86,9 @@ function cotizar() {
     document.getElementById("side").style.display = "none";
     document.getElementById("informacion").style.display = "none";
     document.getElementById("back").style.display = "block";
-    document.getElementById("desinfectantes").style.display = "none";
+    document.getElementById("dispensadores").style.display = "none";
     document.getElementById("Absorbentes").style.display = "none";
-    document.getElementById("limpieza").style.display = "none";
+    document.getElementById("desinfectantes").style.display = "none";
     conta=0;
     contador=3;     
 }
@@ -122,9 +109,9 @@ function back() {
     else{
         document.getElementById("portafolio").style.display = "block";
         document.getElementById("Absorbentes").style.display = "none";
-        document.getElementById("desinfectantes").style.display = "none";
+        document.getElementById("dispensadores").style.display = "none";
         document.getElementById("screen4").style.display = "none";
-        document.getElementById("limpieza").style.display = "none";
+        document.getElementById("desinfectantes").style.display = "none";
         contador=1;
 
     }
@@ -190,7 +177,7 @@ document.querySelector('.Absorbentes')
 });
 });
 
-document.querySelector('.desinfectantes')   
+document.querySelector('.dispensadores')   
 .addEventListener('click',()=>{
  window.scrollTo({
  top: 0,
@@ -198,7 +185,7 @@ document.querySelector('.desinfectantes')
 });
 });
 
-document.querySelector('.limpieza')   
+document.querySelector('.desinfectantes')   
 .addEventListener('click',()=>{
  window.scrollTo({
  top: 0,

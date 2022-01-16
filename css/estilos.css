@@ -395,115 +395,109 @@ lottie-player {
 }
 
 
-/* ----- ----- Desinfectantes ----- ----- */
+/* ----- ----- dispensadores ----- ----- */
 
+.dispensadores {
+	text-align: center;
+	padding: 0px 10px;
+	display: none;
+	grid-gap: 8px;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(4, auto);
+	grid-template-areas: "tituloab tituloab"
+	                     "producto1 producto2";	
+}
+
+.dispensadores >div {
+	border-radius: 10px;
+	overflow: hidden;
+	padding: 10px 5px;
+	background-color: rgba(253, 253, 253, 0.363);
+	backdrop-filter: blur(2px);
+}
+
+.dispensadores .tituloab {
+	grid-area: tituloab;
+
+}
+
+.dispensadores  img {
+	width: 62%;
+	vertical-align: top;
+	border-radius: 10px
+}
+
+.dispensadores .producto1 {
+	
+	grid-area: producto1;
+}
+
+
+@media screen  and  (max-width: 768px){
+.dispensadores { grid-template-areas: "tituloab tituloab"
+	                                 "producto1 producto1"
+									 "producto2 producto2"
+									 "producto3 producto3"
+									 "producto4 producto4";}
+
+}
+
+
+
+
+/* ----- ----- desinfectantes ----- ----- */
 
 
 .desinfectantes {
 	text-align: center;
 	padding: 0px 10px;
 	display: none;
+	grid-gap: 8px;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(4, auto);
+	grid-template-areas: "tituloab tituloab"
+	                     "producto1 producto2";
 
 	
 }
 
-.desinfectantes img {
-	width: 50%;
-	vertical-align: top;
-	border-radius: 10px;
+.desinfectantes .tituloab {
+	grid-area: tituloab;
+
 }
 
-.desinfectantes p {
-	font-size: 16px;
-	padding: 2px 2px;
-}
-
-.desinfectantes a {
-	font-size: 12px;
-}
-
-.desinfectantes .oro {
+.desinfectantes >div {
 	border-radius: 10px;
 	overflow: hidden;
 	padding: 10px 5px;
-	background-color: rgba(253, 253, 253, 0.274);
+	background-color: rgba(253, 253, 253, 0.363);
 	backdrop-filter: blur(2px);
-	
-	
-
-	}
-	
-.desinfectantes .platino {
-		border-radius: 10px;
-		overflow: hidden;
-		padding: 10px 5px;
-		background-color: rgba(253, 253, 253, 0.274);
-		backdrop-filter: blur(2px);
-	
-		}
-.desinfectantes .diamante {
-			border-radius: 10px;
-			overflow: hidden;
-			padding: 10px 5px;
-			background-color: rgba(253, 253, 253, 0.274);
-			backdrop-filter: blur(2px);
-		
-			}
-
-/* ----- ----- limpieza ----- ----- */
-
-
-
-.limpieza {
-	text-align: center;
-	padding: 0px 10px;
-	display: none;
-
-	
 }
 
-.limpieza img {
-	width: 50%;
+.desinfectantes .producto1 {
+	
+	grid-area: producto1;
+}
+
+.desinfectantes  img {
+	width: 62%;
 	vertical-align: top;
-	border-radius: 10px;
+	border-radius: 10px
 }
 
-.limpieza p {
-	font-size: 16px;
-	padding: 2px 2px;
+.desinfectantes .producto2 {
+	grid-area: producto2;
 }
 
-.limpieza a {
-	font-size: 12px;
+@media screen  and  (max-width: 768px){
+.desinfectantes { grid-template-areas: "tituloab tituloab"
+	                                 "producto1 producto1"
+									 "producto2 producto2"
+									 "producto3 producto3"
+									 "producto4 producto4";}
+
 }
 
-.limpieza .oro {
-	border-radius: 10px;
-	overflow: hidden;
-	padding: 10px 5px;
-	background-color: rgba(253, 253, 253, 0.274);
-	backdrop-filter: blur(2px);
-	
-	
-
-	}
-	
-.limpieza .platino {
-		border-radius: 10px;
-		overflow: hidden;
-		padding: 10px 5px;
-		background-color: rgba(253, 253, 253, 0.274);
-		backdrop-filter: blur(2px);
-	
-		}
-.limpieza .diamante {
-			border-radius: 10px;
-			overflow: hidden;
-			padding: 10px 5px;
-			background-color: rgba(253, 253, 253, 0.274);
-			backdrop-filter: blur(2px);
-		
-			}			
 
 
 
