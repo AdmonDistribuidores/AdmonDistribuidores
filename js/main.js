@@ -8,6 +8,9 @@ function inicio() {
     document.getElementById("screen4").style.display = "none";
     document.getElementById("side").style.display = "none";
     document.getElementById("desinfectantes").style.display = "none";
+    document.getElementById("limpieza").style.display = "none";
+    document.getElementById("maquinaria").style.display = "none";
+    document.getElementById("bioseguridad").style.display = "none";
     conta=0;
     contador=0;
 }
@@ -45,6 +48,7 @@ function catalogos() {
     document.getElementById("screen4").style.display = "none";
     document.getElementById("dispensadores").style.display = "none";
     document.getElementById("desinfectantes").style.display = "none";
+    document.getElementById("limpieza").style.display = "none";
     conta=0;
     contador=1;
    
@@ -80,6 +84,36 @@ function desinfectantes() {
     
 }
 
+function limpieza() {
+    document.getElementById("limpieza").style.display = "grid";
+    document.getElementById("portafolio").style.display = "none";
+    document.getElementById("side").style.display = "none";
+    document.getElementById("back").style.display = "block";
+    conta=0;
+    contador=2;    
+    
+}
+
+function maquinaria() {
+    document.getElementById("maquinaria").style.display = "grid";
+    document.getElementById("portafolio").style.display = "none";
+    document.getElementById("side").style.display = "none";
+    document.getElementById("back").style.display = "block";
+    conta=0;
+    contador=2;    
+    
+}
+
+function bioseguridad() {
+    document.getElementById("bioseguridad").style.display = "grid";
+    document.getElementById("portafolio").style.display = "none";
+    document.getElementById("side").style.display = "none";
+    document.getElementById("back").style.display = "block";
+    conta=0;
+    contador=2;    
+    
+}
+
 function cotizar() {
     document.getElementById("screen4").style.display = "block";
     document.getElementById("portafolio").style.display = "none";
@@ -89,6 +123,9 @@ function cotizar() {
     document.getElementById("dispensadores").style.display = "none";
     document.getElementById("Absorbentes").style.display = "none";
     document.getElementById("desinfectantes").style.display = "none";
+    document.getElementById("limpieza").style.display = "none";
+    document.getElementById("maquinaria").style.display = "none";
+    document.getElementById("bioseguridad").style.display = "none";
     conta=0;
     contador=3;     
 }
@@ -102,16 +139,25 @@ function back() {
         document.getElementById("portafolio").style.display = "none";
         document.getElementById("back").style.display = "none";
         document.getElementById("side").style.display = "none";
+        document.getElementById("dispensadores").style.display = "none";
+        document.getElementById("Absorbentes").style.display = "none";
+        document.getElementById("desinfectantes").style.display = "none";
+        document.getElementById("limpieza").style.display = "none";
+        document.getElementById("maquinaria").style.display = "none";
+        document.getElementById("bioseguridad").style.display = "none";
         conta=0;
         contador=0;
 
     }
     else{
         document.getElementById("portafolio").style.display = "block";
-        document.getElementById("Absorbentes").style.display = "none";
-        document.getElementById("dispensadores").style.display = "none";
         document.getElementById("screen4").style.display = "none";
+        document.getElementById("dispensadores").style.display = "none";
+        document.getElementById("Absorbentes").style.display = "none";
         document.getElementById("desinfectantes").style.display = "none";
+        document.getElementById("limpieza").style.display = "none";
+        document.getElementById("maquinaria").style.display = "none";
+        document.getElementById("bioseguridad").style.display = "none";
         contador=1;
 
     }

@@ -152,34 +152,15 @@ lottie-player {
 	border-radius: 10px;
 	box-shadow: 0 0 0 0 rgba(0, 0, 0, .5);
 	right: 16px;
-	bottom: 10px;
+	bottom: 15px;
 	display: none;
-	animation: pulse 1.7s ;	
+	animation: pulse2 1.7s ;	
 }
 .back:hover {
 	background: linear-gradient(102deg, #0099ffc7 40%, #0099ffc7 60%);
 }
-.botoninicio {
-	position: absolute;
-	background: linear-gradient(102deg, #0099ffc7 40%, #0099ffc7 60%);
-	color: #ffffff;
-	font-size: 30px;
-	text-align: center;
-	text-decoration: none;
-	padding: 6px 3%;
-	border-radius: 10px;
-	box-shadow: 0 0 0 0 rgba(0, 0, 0, .5);
-	left: 1px;
-	bottom: 1px;
-	margin: 10px 8px;
-	display: none;
-	animation: pulse 1.7s ;	
-}
 
 
-.botoninicio:hover{
-	background:  #0998f7;
-}
 .share {
 	position: absolute;
 	text-decoration: none;
@@ -200,7 +181,7 @@ lottie-player {
 .pago {
 	position: absolute;
 	text-decoration: none;
-	color: rgb(115, 255, 0);
+	color: rgb(255, 255, 255);
 	top: 97px;
 	right: 10px;	
 }
@@ -213,9 +194,9 @@ lottie-player {
 
 
 .boton {
-	background: linear-gradient(102deg, #0998f7 40%, #1619d4 60%);
+	background: linear-gradient(102deg, #0673bd 40%, #090ca0 60%);
 	color: #fffffff1;
-	font-size: 18px;
+	font-size: 14px;
 	text-align: center;
 	text-decoration: none;
 	padding: 8px 18%;
@@ -232,6 +213,22 @@ lottie-player {
 @keyframes pulse {
 	0% {
 		transform: scale(.99);
+		box-shadow: 0 0 0 0 rgba(9, 255, 0, 0.315);
+	}
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 5px rgba(12, 126, 255, 0.712);
+	}
+	100% {
+		transform: scale(.99);
+		box-shadow: 0 0 0 0 rgba(12, 15, 201, 0.548);
+	}
+	
+}
+
+@keyframes pulse2 {
+	0% {
+		transform: scale(2.99);
 		box-shadow: 0 0 0 0 rgba(9, 255, 0, 0.315);
 	}
 	70% {
@@ -454,9 +451,12 @@ lottie-player {
 	display: none;
 	grid-gap: 8px;
 	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: repeat(4, auto);
+	grid-template-rows: repeat(6, auto);
 	grid-template-areas: "tituloab tituloab"
-	                     "producto1 producto2";
+	                     "producto1 producto2"
+						 "producto3 producto4"
+						 "producto5 producto6"
+						 "producto7 producto8";
 
 	
 }
@@ -489,36 +489,242 @@ lottie-player {
 	grid-area: producto2;
 }
 
+.desinfectantes .producto3 {
+	grid-area: producto3;
+}
+
+.desinfectantes .producto4 {
+	grid-area: producto4;
+}
+.desinfectantes .producto5 {
+	grid-area: producto5;
+}
+
+.desinfectantes .producto6 {
+	grid-area: producto6;
+}
+
+.desinfectantes .producto7 {
+	grid-area: producto7;
+}
+
 @media screen  and  (max-width: 768px){
 .desinfectantes { grid-template-areas: "tituloab tituloab"
 	                                 "producto1 producto1"
 									 "producto2 producto2"
 									 "producto3 producto3"
-									 "producto4 producto4";}
+									 "producto4 producto4"
+									 "producto5 producto5"
+									 "producto6 producto6"
+									 "producto7 producto7";}
 
 }
 
+/* ----- ----- Limpieza ----- ----- */
 
+.limpieza {
+	text-align: center;
+	padding: 0px 10px;
+	display: none;
+	grid-gap: 8px;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(6, auto);
+	grid-template-areas: "tituloab tituloab"
+	                     "producto1 producto2"
+						 "producto3 producto4"
+						 "producto5 producto6"
+						 "producto7 producto8";
 
-
-
-/* ----- ----- cotizar ----- ----- */
-
-.planes {
- text-align: center;
- padding: 10px 5px;
- display: none;
-}
-
-.planes p {
-	font-size: 16px;
-	padding: 2px 2px;
-}
-
-.planes a {
-	font-size: 16px;
 	
 }
+
+.limpieza .tituloab {
+	grid-area: tituloab;
+
+}
+
+.limpieza >div {
+	border-radius: 10px;
+	overflow: hidden;
+	padding: 10px 5px;
+	background-color: rgba(253, 253, 253, 0.363);
+	backdrop-filter: blur(2px);
+}
+
+.limpieza  img {
+	width: 62%;
+	vertical-align: top;
+	border-radius: 10px
+}
+
+.limpieza .producto1 {
+	grid-area: producto1;
+}
+
+.limpieza .producto2 {
+	grid-area: producto2;
+}
+
+.limpieza .producto3 {
+	grid-area: producto3;
+}
+
+.limpieza .producto4 {
+	grid-area: producto4;
+}
+.limpieza .producto5 {
+	grid-area: producto5;
+}
+
+.limpieza .producto6 {
+	grid-area: producto6;
+}
+
+.limpieza .producto7 {
+	grid-area: producto7;
+}
+
+.limpieza .producto8 {
+	grid-area: producto8;
+}
+
+@media screen  and  (max-width: 768px){
+.limpieza { grid-template-areas: "tituloab tituloab"
+	                                 "producto1 producto1"
+									 "producto2 producto2"
+									 "producto3 producto3"
+									 "producto4 producto4"
+									 "producto5 producto5"
+									 "producto6 producto6"
+									 "producto7 producto7"
+									 "producto8 producto8";}
+
+}
+
+/* ----- ----- maquinaria ----- ----- */
+
+
+.maquinaria {
+	text-align: center;
+	padding: 0px 10px;
+	display: none;
+	grid-gap: 8px;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(6, auto);
+	grid-template-areas: "tituloab tituloab"
+	                     "producto1 producto2";
+
+	
+}
+
+.maquinaria .tituloab {
+	grid-area: tituloab;
+
+}
+
+.maquinaria >div {
+	border-radius: 10px;
+	overflow: hidden;
+	padding: 10px 5px;
+	background-color: rgba(253, 253, 253, 0.363);
+	backdrop-filter: blur(2px);
+}
+
+.maquinaria .producto1 {
+	
+	grid-area: producto1;
+}
+
+.maquinaria  img {
+	width: 62%;
+	vertical-align: top;
+	border-radius: 10px
+}
+
+.maquinaria .producto1 {
+	grid-area: producto1;
+}
+
+.maquinaria .producto2 {
+	grid-area: producto2;
+}
+
+.maquinaria .producto3 {
+	grid-area: producto3;
+}
+
+
+@media screen  and  (max-width: 768px){
+.maquinaria { grid-template-areas: "tituloab tituloab"
+	                                 "producto1 producto1"
+									 "producto2 producto2"
+									 "producto3 producto3";}
+
+}
+
+/* ----- ----- bioseguridad ----- ----- */
+
+
+.bioseguridad {
+	text-align: center;
+	padding: 0px 10px;
+	display: none;
+	grid-gap: 8px;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(6, auto);
+	grid-template-areas: "tituloab tituloab"
+	                     "producto1 producto2"
+						 "producto3 producto4";
+
+	
+}
+
+.bioseguridad .tituloab {
+	grid-area: tituloab;
+
+}
+
+.bioseguridad >div {
+	border-radius: 10px;
+	overflow: hidden;
+	padding: 10px 5px;
+	background-color: rgba(253, 253, 253, 0.363);
+	backdrop-filter: blur(2px);
+}
+
+.bioseguridad .producto1 {
+	
+	grid-area: producto1;
+}
+
+.bioseguridad  img {
+	width: 62%;
+	vertical-align: top;
+	border-radius: 10px
+}
+
+.bioseguridad .producto1 {
+	grid-area: producto1;
+}
+
+.bioseguridad .producto2 {
+	grid-area: producto2;
+}
+
+.bioseguridad .producto3 {
+	grid-area: producto3;
+}
+
+
+@media screen  and  (max-width: 768px){
+.bioseguridad { grid-template-areas: "tituloab tituloab"
+	                                 "producto1 producto1"
+									 "producto2 producto2"
+									 "producto3 producto3";}
+
+}
+
+
 
 /* ----- ----- Redes Sociales ----- ----- */
 
@@ -695,7 +901,7 @@ footer .rango {
 
 
   .materialpago:hover{
-	  background: rgba(144, 194, 44, 0.753);
+	  background: rgba(65, 196, 39, 0.753);
 	  color: #fff;
   }
 
