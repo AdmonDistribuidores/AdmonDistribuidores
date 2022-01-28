@@ -323,17 +323,17 @@ lottie-player {
 
 @keyframes banner {
 	0%, 23% {
-		background-image: url(../img/banner1.png);
+		background-image: url(../img/ofici.png);
 		
 	}
 	25%, 45% {
-		background-image: url(../img/banner2.png);
+		background-image: url(../img/desterg.png);
 	}
 	50%, 70% {
-		background-image: url(../img/banner3.png);
+		background-image: url(../img/prod.png);
 	}
 	75%, 100% {
-		background-image: url(../img/banner4.png);
+		background-image: url(../img/carga.png);
 	}
 }
 
