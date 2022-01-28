@@ -349,7 +349,10 @@ lottie-player {
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(4, auto);
 	grid-template-areas: "tituloab tituloab"
-	                     "producto1 producto2";
+	                     "producto1 producto2"
+	                     "producto3 producto4"
+						 "producto5 producto6";
+						 ;
 
 	
 }
@@ -382,12 +385,30 @@ lottie-player {
 	grid-area: producto2;
 }
 
+.Absorbentes .producto3 {
+	grid-area: producto3;
+}
+
+.Absorbentes .producto4 {
+	grid-area: producto4;
+}
+
+.Absorbentes .producto5 {
+	grid-area: producto5;
+}
+
+.Absorbentes .producto6 {
+	grid-area: producto6;
+}
+
 @media screen  and  (max-width: 768px){
 .Absorbentes { grid-template-areas: "tituloab tituloab"
 	                                 "producto1 producto1"
 									 "producto2 producto2"
 									 "producto3 producto3"
-									 "producto4 producto4";}
+									 "producto4 producto4"
+									 "producto5 producto5"
+									 "producto6 producto6";}
 
 }
 

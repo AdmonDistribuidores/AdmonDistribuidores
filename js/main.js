@@ -245,7 +245,7 @@ document.querySelector("#submit").addEventListener("click", e => {
     e.preventDefault();
   
     //INGRESE UN NUMERO DE WHATSAPP VALIDO AQUI:
-    let telefono = "593959511244";
+    let telefono = "593984880584";
   
     let cliente = document.querySelector("#cliente").value;
     let contacto = document.querySelector("#contacto").value;
@@ -258,7 +258,7 @@ document.querySelector("#submit").addEventListener("click", e => {
     resp.classList.remove("fail");
     resp.classList.remove("send");
   
-    let url = `https://api.whatsapp.com/send?phone=593959511244&text=
+    let url = `https://api.whatsapp.com/send?phone=593984880584&text=
           *Admon Distribuidores*%0A
           *Datos de la Cotización*%0A
           *Nombre de Cliente*%0A
