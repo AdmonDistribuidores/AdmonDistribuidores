@@ -633,7 +633,8 @@ lottie-player {
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(6, auto);
 	grid-template-areas: "tituloab tituloab"
-	                     "producto1 producto2";
+	                     "producto1 producto2"
+						 "producto3 producto3";
 
 	
 }
