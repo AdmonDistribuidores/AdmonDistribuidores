@@ -18,9 +18,7 @@ function inicio() {
 
 
 
-var btn = document.getElementById("inicio"),
-    informacion = document.getElementById("infomacion"),
-    contador=0;
+var btn = contador=0;
 
 
 function servicios() {
@@ -127,7 +125,11 @@ function cotizar() {
     document.getElementById("maquinaria").style.display = "none";
     document.getElementById("bioseguridad").style.display = "none";
     conta=0;
-    contador=3;     
+    contador=3;   
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+       });  
 }
 
 //   boton atras
@@ -167,9 +169,7 @@ function back() {
 
    //    menu laterl 
 
-    var btns = document.getElementById("inicio"),
-    informacion = document.getElementById("infomacion"),
-    conta=0;
+    var btns = conta=0;
 
     function sidebar()  {
 
@@ -189,23 +189,34 @@ function back() {
             
         }
 
-// llevar arriba
-       
+// llevar cerrar side automatico
 
-document.querySelector('.side')   
+document.querySelector('.tarjeta').addEventListener('click',()=>{
+document.getElementById("side").style.display = "none";
+conta=0;
+});
+
+
+
+
+// llevar arriba
+    
+document.querySelector('.side1')   
 .addEventListener('click',()=>{
  window.scrollTo({
  top: 0,
  behavior: 'smooth'
 });
 });
-document.querySelector('.portafolio')   
+
+document.querySelector('.side2')   
 .addEventListener('click',()=>{
  window.scrollTo({
  top: 0,
  behavior: 'smooth'
 });
 });
+
 
 document.querySelector('.back')   
 .addEventListener('click',()=>{
@@ -215,29 +226,6 @@ document.querySelector('.back')
 });
 });
 
-document.querySelector('.Absorbentes')   
-.addEventListener('click',()=>{
- window.scrollTo({
- top: 0,
- behavior: 'smooth'
-});
-});
-
-document.querySelector('.dispensadores')   
-.addEventListener('click',()=>{
- window.scrollTo({
- top: 0,
- behavior: 'smooth'
-});
-});
-
-document.querySelector('.desinfectantes')   
-.addEventListener('click',()=>{
- window.scrollTo({
- top: 0,
- behavior: 'smooth'
-});
-});
 
 // formulario
 
@@ -258,7 +246,7 @@ document.querySelector("#submit").addEventListener("click", e => {
     resp.classList.remove("fail");
     resp.classList.remove("send");
   
-    let url = `https://api.whatsapp.com/send?phone=593984880584&text=
+    let url = `https://api.whatsapp.com/send?phone=${telefono}&text=
           *Admon Distribuidores*%0A
           *Datos de la Cotización*%0A
           *Nombre de Cliente*%0A
@@ -288,23 +276,7 @@ document.querySelector("#submit").addEventListener("click", e => {
   
 
 
-        document.querySelector('.side1')   
-        .addEventListener('click',()=>{
-         window.scrollTo({
-         top: 0,
-         behavior: 'smooth'
-        });
-        });
 
-
-        document.querySelector('.side3')   
-        .addEventListener('click',()=>{
-         window.scrollTo({
-         top: 0,
-         behavior: 'smooth'
-        });
-        });
-        
 
     
     
