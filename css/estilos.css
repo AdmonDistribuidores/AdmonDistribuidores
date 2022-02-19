@@ -61,6 +61,14 @@ lottie-player {
 	
 }
 
+.portadap  {
+	width: 100%;
+	vertical-align: top;
+	margin: 0%;
+	display: none;
+	
+}
+
 .sidebar{
 	vertical-align: top;
 	margin: 0%;
@@ -71,8 +79,6 @@ lottie-player {
 	
 		
 }
-
-
 
 .sidebar .menu1 {
 	color: #fffffff1;
@@ -114,53 +120,6 @@ lottie-player {
 	background: #000c1183;
 }
 
-
-/* ----- ----- inicio informacion ----- ----- */
-.informacion {
-	text-align: center;
-
-}
-.informacion .logo {
-	width: 45%;
-}
-
-.informacion .titulo  {
-	text-align: center;
-	font-size: 18px;
-	padding: 5px;
-}
-
-
-.informacion .subtitulo {
-	color: #0028db;
-	font-size: 12px;
-	line-height: 18px;
-	margin-bottom: 16px;
-	text-align: center;
-}
-
-.informacion p {
-	font-size: 12px;
-}
-
-.back {
-	position: fixed;
-	z-index: 1200;
-	color: #ffffff;
-	text-align: center;
-	text-decoration: none;
-	border-radius: 10px;
-	box-shadow: 0 0 0 0 rgba(0, 0, 0, .5);
-	right: 16px;
-	bottom: 15px;
-	display: none;
-	animation: pulse2 1.7s ;	
-}
-.back:hover {
-	background: linear-gradient(102deg, #0099ffc7 40%, #0099ffc7 60%);
-}
-
-
 .share {
 	position: absolute;
 	text-decoration: none;
@@ -185,13 +144,67 @@ lottie-player {
 	top: 97px;
 	right: 10px;	
 }
-.pago img {
-	position: fixed;
-	width: 32px;
-	right: 10px;	
-	top: 95px;
+.fotoperfil {
+	width: 30%;
+	border-radius: 50%;
+	border: solid 4px rgb(12, 64, 133);
+
+	
 }
 
+
+
+/* ----- ----- inicio informacion ----- ----- */
+.informacion {
+	text-align: center;
+
+}
+.informacion .logo {
+	width: 45%;
+}
+
+.informacion .titulo  {
+	text-align: center;
+	font-size: 18px;
+	padding: 5px;
+}
+
+.informacion .titulop  {
+	text-align: center;
+	font-size: 18px;
+	padding: 1px;
+}
+
+
+.informacion .subtitulo {
+	color: #0028db;
+	font-size: 12px;
+	line-height: 18px;
+	margin-bottom: 16px;
+	text-align: center;
+}
+
+.informacion p {
+	font-size: 12px;
+	padding: 0px 4%;
+}
+
+.back {
+	position: fixed;
+	z-index: 1200;
+	color: #ffffff;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 10px;
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, .5);
+	right: 16px;
+	bottom: 15px;
+	display: none;
+	animation: pulse2 1.7s ;	
+}
+.back:hover {
+	background: linear-gradient(102deg, #0099ffc7 40%, #0099ffc7 60%);
+}
 
 .boton {
 	background: linear-gradient(102deg, #0673bd 40%, #090ca0 60%);
@@ -209,6 +222,25 @@ lottie-player {
 	color: #0998f7;
 	
 }
+
+.botonc {
+	background: linear-gradient(102deg, #ffffff 40%, #ffffff 60%);
+	color: #0011fff1;
+	font-size: 10px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 10px;
+	box-shadow: 1px 1px 5px #fdfdfdec;
+	padding: 5px 8px;
+	border: solid 1px rgb(19, 156, 247);
+}
+
+.botonc:hover {
+	background: rgb(19, 156, 247);
+	color: #ffffff;
+	
+}
+
 
 @keyframes pulse {
 	0% {
@@ -833,6 +865,8 @@ footer .rango {
 	  display: none;
 	  }
   }
+
+
 
 @media screen  and  (min-width: 1400px){
 	.sidebar { 
