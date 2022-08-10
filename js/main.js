@@ -442,7 +442,7 @@ document.querySelector("#submit").addEventListener("click", e => {
         icon: 'success',
         title: 'Cotizar',
         text: 'Producto Agregado a la Lista',
-        footer: 'Hason Clean',
+        footer: 'Admon Distribuidores',
         timer: 2000
       });
   
