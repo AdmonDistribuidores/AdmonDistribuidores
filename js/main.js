@@ -31,8 +31,8 @@ function backarriba(){
 function backweb() {
    
     if (contador==1) {
-        document.getElementById("informacion").style.display = "block";
-        document.getElementById("portafolio").style.display = "none";
+        document.getElementById("portafolio").style.display = "block";
+        document.getElementById("informacion").style.display = "none";
         document.getElementById("side").style.display = "none";
         document.getElementById("dispensadores").style.display = "none";
         document.getElementById("Absorbentes").style.display = "none";
@@ -49,6 +49,7 @@ function backweb() {
     }
     else if(contador==2){
         document.getElementById("portafolio").style.display = "block";
+        document.getElementById("informacion").style.display = "none";
         document.getElementById("screen4").style.display = "none";
         document.getElementById("dispensadores").style.display = "none";
         document.getElementById("Absorbentes").style.display = "none";
@@ -70,20 +71,19 @@ function backweb() {
     } 
 
 function inicio() {
-    document.getElementById("informacion").style.display = "block";	
-    document.getElementById("portafolio").style.display = "none";
+    document.getElementById("informacion").style.display = "none";	
+    document.getElementById("portafolio").style.display = "block";
     document.getElementById("Absorbentes").style.display = "none";
-    document.getElementById("dispensadores").style.display = "none";
-    document.getElementById("screen4").style.display = "none";
     document.getElementById("side").style.display = "none";
+    document.getElementById("informacion").style.display = "none";
+    document.getElementById("screen4").style.display = "none";
+    document.getElementById("dispensadores").style.display = "none";
     document.getElementById("desinfectantes").style.display = "none";
     document.getElementById("limpieza").style.display = "none";
-    document.getElementById("maquinaria").style.display = "none";
-    document.getElementById("bioseguridad").style.display = "none";
     document.getElementById("sharelink").style.display = "none";
     conta=0;
-    contador=0;
-    backweb();
+    contador=1;
+    ids1();
 }
 
 
@@ -106,20 +106,21 @@ function servicios() {
 
 }
 
-function catalogos() {
-    document.getElementById("informacion").style.display = "none";	
-    document.getElementById("portafolio").style.display = "block";
+function codigoqr() {
+    document.getElementById("informacion").style.display = "block";	
+    document.getElementById("portafolio").style.display = "none";
     document.getElementById("Absorbentes").style.display = "none";
-    document.getElementById("side").style.display = "none";
-    document.getElementById("informacion").style.display = "none";
-    document.getElementById("screen4").style.display = "none";
     document.getElementById("dispensadores").style.display = "none";
+    document.getElementById("screen4").style.display = "none";
+    document.getElementById("side").style.display = "none";
     document.getElementById("desinfectantes").style.display = "none";
     document.getElementById("limpieza").style.display = "none";
+    document.getElementById("maquinaria").style.display = "none";
+    document.getElementById("bioseguridad").style.display = "none";
     document.getElementById("sharelink").style.display = "none";
     conta=0;
-    contador=1;
-    ids1();
+    contador=2;
+    ids2();
    
 }
 
@@ -319,44 +320,56 @@ document.querySelector('.back')
 
 document.querySelector("#submit").addEventListener("click", e => {
     e.preventDefault();
-  
-    //INGRESE UN NUMERO DE WHATSAPP VALIDO AQUI:
-    let telefono = "593984880584";
-  
-    let cliente = document.querySelector("#cliente").value;
-    let contacto = document.querySelector("#contacto").value;
-    let venta = document.querySelector("#venta").value;
-    let cantidad = document.querySelector("#cantidad").value;
-    let productos = document.querySelector("#productos1").value;
-    let resp = document.querySelector("#respuesta");
-  
-    resp.classList.remove("fail");
-    resp.classList.remove("send");
-  
-    let url = `https://api.whatsapp.com/send?phone=${telefono}&text=
-          *Admon Distribuidores*%0A
-          *Datos de la Cotización*%0A
-          *Nombre de Cliente*%0A
-          ${cliente}%0A
-          *Numero de Contacto*%0A
-          ${contacto}%0A
-          *Tipo de Venta*%0A
-          ${venta}%0A
-          *Items*%0A
-          ${cantidad}%0A
-          *Cotizar*%0A
-          ${productos}%0A`;
-  
-    if (cliente === "" || contacto === "" || venta === "" || productos === "" || cantidad === "" ) {
-      resp.classList.add("fail");
-      resp.innerHTML = `Espera, ${cliente} faltan algunos Datos `;
-      return false;
+  let items = document.getElementById("numer2").textContent;
+   if (items == 0 ){
+    console.log('noenvia')
+   }else {
+    let allTasks = "";
+    let tasks = JSON.parse(localStorage.getItem('tasks'));
+    
+    for (let i = 0; i < tasks.length; i++) {
+      allTasks +=  "Producto:" + tasks[i].title + " Descripción " + tasks[i].description + " / " + "\n";
     }
-    resp.classList.remove("fail");
-    resp.classList.add("send");
-    resp.innerHTML = `Tu Cotización Fue Enviada, ${cliente}`;
-  
-    window.open(url);
+//INGRESE UN NUMERO DE WHATSAPP VALIDO AQUI:
+let telefono = "593984880584";
+let cliente = document.querySelector("#cliente").value;
+let Ubicacion = document.querySelector("#Ubicacion").value;
+let venta = document.querySelector("#venta").value;
+let resp = document.querySelector("#respuesta");
+let productos = allTasks ;
+
+resp.classList.remove("fail");
+resp.classList.remove("send");
+
+let url = `https://api.whatsapp.com/send?phone=${telefono}&text=
+      *Admon Distribuidores*%0A
+      *Datos de la Cotización*%0A
+      *Cliente*%0A
+      ${cliente}%0A
+      *Ubicacion*%0A
+      ${Ubicacion}%0A
+      *Venta*%0A
+      ${venta}%0A
+      *Cotizar*%0A
+      ${productos}%0A`;
+
+if (cliente === "" || Ubicacion === "" || venta === "" ) {
+  resp.classList.add("fail");
+  resp.innerHTML = `Espera, ${cliente} faltan algunos Datos `;
+  return false;
+}
+resp.classList.remove("fail");
+resp.classList.add("send");
+resp.innerHTML = `Tu Cotización Fue Enviada, ${cliente}`;
+window.open(url);
+clearLocalStorage();
+clearTasks();
+
+   }
+
+    
+
+    
   });
 
    //ALERTAS>
@@ -425,6 +438,20 @@ document.querySelector("#submit").addEventListener("click", e => {
    
   };
   
+  function msjn() {
+    Swal.fire({
+    showCloseButton: true,
+    icon: 'info',
+    title: 'Quiénes Somos',
+    text: 'Información Disponible Próximamente',
+    footer: 'Admon Distribuidores'
+    });
+  
+   
+  };
+
+
+
   function msj() {
     Swal.fire({
     showCloseButton: true,
@@ -441,8 +468,8 @@ document.querySelector("#submit").addEventListener("click", e => {
     Swal.fire({
         icon: 'success',
         title: 'Cotizar',
-        text: 'Producto Agregado a la Lista',
-        footer: 'Admon Distribuidores',
+        text: 'Agregado al Carrito',
+        footer: 'Hason Clean',
         timer: 2000
       });
   
@@ -468,70 +495,45 @@ const $content = document.getElementById('textareacopy');
   //absorventes>
   
   
-    function agp1() {
-  
-      agregar = agregar + ` Papel Higiénico Jumbo Soott -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-      
-       
+  function agp1() {
+    document.getElementById('title').value =  `Papel Higiénico Jumbo Soott`;
+    document.getElementById('description').value = `Doble hoja 250 mt`;
+    cotizar2();
+    
       }   
   
-  function agp2() {
+function agp2() {
+        document.getElementById('title').value =  `Toalla Forest`;
+        document.getElementById('description').value = `x 2 Rollos 100 mt`;
+        cotizar2();
+        
+          }        
+
+function agp3() {
+        document.getElementById('title').value =  `Toalla Aurora`;
+        document.getElementById('description').value = `Una Hoja 100 mt`;
+        cotizar2();
+                      
+        } 
+function agp4() {
+        document.getElementById('title').value =  `Toalla Aurora`;
+        document.getElementById('description').value = `Doble Hoja`;
+        cotizar2();
+                          
+        }          
+
   
-      agregar = agregar + ` Toalla Forest 100 metros -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
-  }
-      
-  function agp3() {
-  
-      agregar = agregar + ` Toalla Aurora 100 metros -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
-  }
-  
-  function agp4() {
-  
-      agregar = agregar + ` Toalla en Z Doble Hoja Aurora -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
-  }
-  
-  function agp5() {
-  
-      agregar = agregar + ` Toalla en Z Doble Hoja Forest -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+function agp5() {
+    document.getElementById('title').value =  `Toalla Forest`;
+    document.getElementById('description').value = `Doble Hoja Laminado`;
+    cotizar2();
+   
   }
   
   function agp6() {
-  
-      agregar = agregar + ` Limpiones Industriales de 100, 300, 600 Metros -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
+    document.getElementById('title').value =  `Limpiones Industriales`;
+    document.getElementById('description').value = `100, 300, 600 mt`;
+    cotizar2();
        
   }
       
@@ -539,281 +541,317 @@ const $content = document.getElementById('textareacopy');
         
   
   function agp7() {
-  
-      agregar = agregar + ` Dispensador de Papel Higenico -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+    document.getElementById('title').value =  `Dispensador `;
+    document.getElementById('description').value = ` Papel Higenico`;
+    cotizar2();     
   }
+
+
   function agp8() {
-  
-      agregar = agregar + ` Dispensador de Papel Toalla en Z -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+   document.getElementById('title').value =  `Dispensador`;
+    document.getElementById('description').value = `Papel Toalla en Z `;
+    cotizar2();     
   }
+
   function agp9() {
-  
-      agregar = agregar + ` Dispensadores de jabon liquido -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+    document.getElementById('title').value =  `Dispensadores`;
+    document.getElementById('description').value = `jabon liquido`;
+    cotizar2();     
   }       
     
   
   //desinfectantes> 
   
   function agp10() {
-  
-      agregar = agregar + ` Desinfectante Liquido Concentrado -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+    document.getElementById('title').value =  `Desinfectante`;
+    document.getElementById('description').value = `Liquido Concentrado`;
+    cotizar2();       
   } 
+
+
   function agp11() {
-  
-      agregar = agregar + ` Amonio Cuaternario -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
-  } 
+ document.getElementById('title').value =  `Amonio`;
+  document.getElementById('description').value = `Cuaternario`;
+    cotizar2();       
+  }  
+
   function agp12() {
-  
-      agregar = agregar + ` Cloro al 5% y 10% -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+document.getElementById('title').value =  `Cloro`;
+document.getElementById('description').value = `al 5% y 10%`;
+cotizar2();         
   } 
+
+
   function agp13() {
-  
-      agregar = agregar + ` Jabon Liquido -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+document.getElementById('title').value =  `Jabon`;
+document.getElementById('description').value = `Liquido`;
+cotizar2();     
   } 
+
+  
   function agp14() {
-  
-      agregar = agregar + ` Desengrasante "Mundo Clean -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+    document.getElementById('title').value =  `Desengrasante`;
+    document.getElementById('description').value = `Mundo Clean`;
+    cotizar2();       
   } 
+
+
   function agp15() {
-  
-      agregar = agregar + ` Desengrasante "Tornado OZZ -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+    document.getElementById('title').value =  `Desengrasante`;
+    document.getElementById('description').value = `Tornado OZZ`;
+    cotizar2();    
   } 
+
+
   function agp16() {
-  
-      agregar = agregar + ` Limpia Vidrios "Mundo Clean -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+   document.getElementById('title').value =  `Limpia Vidrios`;
+    document.getElementById('description').value = `Mundo Clean`;
+    cotizar2();   
   } 
   
   //limpieza> 
   
   function agp17() {
-  
-      agregar = agregar + ` Mopas de Barrido Y trapeo "BINNER -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+    document.getElementById('title').value =  `Mopas de Barrido Y trapeo`;
+    document.getElementById('description').value = `BINNER`;
+    cotizar2();   
   }
-  
+ 
   function agp18() {
-  
-      agregar = agregar + ` Coches de Limpieza -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
+    document.getElementById('title').value =  `Coches`;
+    document.getElementById('description').value = `Limpieza`;
+    cotizar2(); 
        
   }
   
   function agp19() {
-  
-      agregar = agregar + ` Escobas -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+    document.getElementById('title').value =  `Escobas`;
+    document.getElementById('description').value = `Cerdas Suaves`;
+    cotizar2();    
   }
   
+
   function agp20() {
-  
-      agregar = agregar + ` Trapeadores -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+    document.getElementById('title').value =  `Trapeadores`;
+    document.getElementById('description').value = `fibras Resistentes`;
+    cotizar2();     
   }
+
+
   
   function agp21() {
-  
-      agregar = agregar + ` Fundas de Basura -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+    document.getElementById('title').value =  `Fundas`;
+    document.getElementById('description').value = `de Basura`;
+    cotizar2();    
   }
   
   function agp22() {
-  
-      agregar = agregar + ` Paños Microfibra -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+    document.getElementById('title').value =  `Paños`;
+    document.getElementById('description').value = `Microfibra`;
+    cotizar2();          
   }
   
   function agp23() {
-  
-      agregar = agregar + ` Detergente en Polvo -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+    document.getElementById('title').value =  `Detergente`;
+    document.getElementById('description').value = `en Polvo`;
+    cotizar2();     
   }
   
   function agp24() {
-  
-      agregar = agregar + ` Detergente Liquido Enzimatico -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+    document.getElementById('title').value =  `Detergente`;
+    document.getElementById('description').value = `Liquido Enzimatico`;
+    cotizar2();     
   }
   
   function agp25() {
-  
-      agregar = agregar + ` Detergente de Ropa -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+    document.getElementById('title').value =  `Detergente`;
+    document.getElementById('description').value = `de Ropa`;
+    cotizar2();     
   }
+
+
   
   function agp26() {
-  
-      agregar = agregar + ` Guantes de Caucho -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+  document.getElementById('title').value =  `Guantes`;
+    document.getElementById('description').value = `de Caucho`;
+    cotizar2();   
   }
   
   //maquinaria> 
   
   function agp27() {
-  
-      agregar = agregar + ` Abrillantadoras Industriale -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+    document.getElementById('title').value =  `Abrillantadoras`;
+    document.getElementById('description').value = `Industriales`;
+    cotizar2();       
   }
+
   
   function agp28() {
-  
-      agregar = agregar + ` Aspiradoras de Polvo Y Agua -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+     document.getElementById('title').value =  `Aspiradoras`;
+    document.getElementById('description').value = `de Polvo Y Agua`;
+    cotizar2();    
   }                                             
   
   //bioseguridad>
   
   function agp29() {
-  
-      agregar = agregar + ` Cepillo de Dientes -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+    document.getElementById('title').value =  `Cepillo`;
+    document.getElementById('description').value = `de Dientes`;
+    cotizar2();        
   }
   
   function agp30() {
-  
-      agregar = agregar + ` Alcohol al 70% "Mundo Clean -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+    document.getElementById('title').value =  `Alcohol`;
+    document.getElementById('description').value = `al 70% "Mundo Clean`;
+    cotizar2();   
   }
   
   function agp31() {
-  
-      agregar = agregar + ` Gel Antibacterial "DR Clean -`;
-      document.querySelector("#productos1").value =  agregar;
-      suma = suma +1;
-      amountProduct.innerHTML = suma;
-      document.querySelector("#cantidad").value =  suma ;
-      msj2();
-       
+    document.getElementById('title').value =  `Gel Antibacterial`;
+    document.getElementById('description').value = `DR Clean `;
+    cotizar2();   
   }
 
+
+  function msjcarrito() {
+    Swal.fire({
+        icon: 'success',
+        showConfirmButton: false,
+        text: 'Agregado al Carrito',
+        timer: 500
+      });
+  
+   
+  }
+
+
+  function cotizar2() {
+    Swal.fire({
+        title: 'Cotizar Producto',
+        showCloseButton: true,
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Añadir al Carrito',
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          saveTask();
+          msjcarrito();
+        }else if (result.dismiss) {
+            document.getElementById('formTask').reset();
+          }
+      })
+  
+    
+  };
+  
+
+  function saveTask(e) {
+    let title = document.getElementById('title').value;
+    let description = document.getElementById('description').value;
+  
+  
+    let task = {
+      title,
+      description
+    };
+  
+    if(localStorage.getItem('tasks') === null) {
+      let tasks = [];
+      tasks.push(task);
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    } else {
+      let tasks = JSON.parse(localStorage.getItem('tasks'));
+      tasks.push(task);
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+  
+    getTasks();
+    document.getElementById('formTask').reset();
+  
+  }
+  
+  var index = 0; 
+  
+  function deleteTask(title) {
+    let tasks = JSON.parse(localStorage.getItem('tasks'));
+    for(let i = 0; i < tasks.length; i++) {
+      if(tasks[i].title == title) {
+        tasks.splice(i, 1);
+        document.getElementById("numer").textContent = i ;
+        document.getElementById("numer2").textContent = i ;
+   
+      }
+    }
+    
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    getTasks();
+  }
+  
+  
+  var index2 = '';
+  
+  function getTasks() {
+    if(localStorage.getItem('tasks') === null) {
+      console.log('sinproductos')
+    } else {
+      let tasks = JSON.parse(localStorage.getItem('tasks'));
+      let tasksView = document.getElementById('tasks');
+      tasksView.innerHTML = '';
+      for(let i = 0; i < tasks.length; i++) {
+        let title = tasks[i].title;
+        let description = tasks[i].description;
+        index2 = i + 1;
+        document.getElementById("numer").textContent = index2  ;
+        document.getElementById("numer2").textContent = index2 ;
+        tasksView.innerHTML += `<div class="cardp">
+            <div class="card-body">
+              <p class="items">${title} - ${description}
+              <a href="javascript:deleteTask('${title}')"><span class="fa fa-trash"></span ></a>
+              </p>
+           
+            </div>
+          </div>`;
+       
+      }
+    }
+    
+  };
+
+  
+function whatsapp() {
+  
+    let allTasks = "";
+let tasks = JSON.parse(localStorage.getItem('tasks'));
+
+for (let i = 0; i < tasks.length; i++) {
+  allTasks +=  "Producto:" + tasks[i].title + " Descrpicion " + tasks[i].description + " / " + "\n";
+}
+
+       clearLocalStorage();
+       clearTasks();
+};
+
+  
+  
+  
+  
+   
+  function clearLocalStorage() {
+    localStorage.clear()
+    ;
+  
+  }
+  
+  function clearTasks() {
+    localStorage.removeItem('tasks');
+    location.reload();
+    getTasks();
+  
+  }
+  
+
+  getTasks();
   
 
 

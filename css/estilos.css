@@ -157,6 +157,7 @@ lottie-player {
 /* ----- ----- inicio informacion ----- ----- */
 .informacion {
 	text-align: center;
+	display: none;
 
 }
 .informacion .logo {
@@ -299,7 +300,7 @@ lottie-player {
 
 .portafolio {
 	text-align: center;
-	display: none;
+
 }
 
 .portafolio .logo {
@@ -970,12 +971,50 @@ footer .rango {
 	  color: #fff;
   }
 
+
+
+
   /* screen 4 Formulario */
 
 .screen4 {
 	text-align: center;
 	display: none;
 
+}
+
+.screen4 .mipedido{
+	background: #0099ff;
+	color: #ffffff;
+	padding: 0px 4px;
+
+}
+
+.screen4 .mipedido p {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.screen4 .cardp {
+	background:rgba(255, 255, 255, 0.97);
+	box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
+	padding: 3px 0px;
+}
+
+.screen4 span {
+	font-size: 14px;
+}
+
+.screen4 .cardp .card-body .items{
+	font-size: 12px;
+	color: #000000;
+	padding: 5px 0px;
+
+
+}
+
+.screen4 .cardp .card-body a{
+	color: #ff0000;
+	margin: 0px 2px;
 }
 
   .formulario {
@@ -988,7 +1027,7 @@ footer .rango {
   }
   
   .imgLogo {
-	width: 30%;
+	width: 40%;
 
   }
   
@@ -1004,6 +1043,7 @@ footer .rango {
   }
   .formulario__parrafo {
 	color: rgba(0, 0, 0, 0.5);
+	padding: 2px 0px;
   }
   .formulario__input,
   .formulario__label {
@@ -1066,6 +1106,12 @@ footer .rango {
   #respuesta.send {
 	color: green;
   }
+
+.screen4 .formTask {
+	display: none;
+}
+
+
 
   /* screen share */
 
