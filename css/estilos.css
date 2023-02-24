@@ -19,6 +19,8 @@ lottie-player {
 	vertical-align: top;
 }
 
+
+
 .contenedor {
 	width: 95%;
 	max-width: 700px;
@@ -53,6 +55,49 @@ lottie-player {
 
 }
 
+.banner2 {
+	width: 100%;
+	animation: banner2 8s infinite linear ;
+	background-size: 100% 100%;
+	position: static;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+
+}
+
+@keyframes banner {
+	0%, 23% {
+		background-image: url(../img/desterg.png);
+		
+	}
+	25%, 45% {
+		background-image: url(../img/DISPENSADORES.png);
+	}
+	50%, 70% {
+		background-image: url(../img/prod.png);
+	}
+	75%, 100% {
+		background-image: url(../img/carga.png);
+	}
+}
+
+@keyframes banner2 {
+	0%, 23% {
+		background-image: url(../img/ofici.png);
+		
+	}
+	25%, 45% {
+		background-image: url(../img/desterg.png);
+	}
+	50%, 70% {
+		background-image: url(../img/camion.png);
+	}
+	75%, 100% {
+		background-image: url(../img/produstos.png);
+	}
+}
 
 .portada  {
 	width: 100%;
@@ -296,6 +341,50 @@ lottie-player {
 	  font-size: 12px;
 }
 
+
+
+.quienes {
+	text-align: center;
+
+
+}
+.quienes .logo {
+	width: 45%;
+}
+
+
+.quienes .imgsomos{
+	width: 55%;
+	box-shadow: 1px 1px 5px #020000c4;
+}
+
+.quienes .titulo  {
+	text-align: center;
+	font-size: 18px;
+	padding: 5px;
+}
+
+.quienes .titulop  {
+	text-align: center;
+	font-size: 18px;
+	padding: 1px;
+}
+
+
+.quienes .subtitulo {
+	color: #0028db;
+	font-size: 12px;
+	line-height: 18px;
+	margin-bottom: 16px;
+	text-align: center;
+}
+
+.quienes p {
+	font-size: 12px;
+	padding: 0px 4%;
+}
+
+
 /* ----- ----- portafolios ----- ----- */
 
 .portafolio {
@@ -360,22 +449,6 @@ lottie-player {
 	color: #ffffff;
 }
 
-
-@keyframes banner {
-	0%, 23% {
-		background-image: url(../img/ofici.png);
-		
-	}
-	25%, 45% {
-		background-image: url(../img/desterg.png);
-	}
-	50%, 70% {
-		background-image: url(../img/prod.png);
-	}
-	75%, 100% {
-		background-image: url(../img/carga.png);
-	}
-}
 
 
 
@@ -594,7 +667,8 @@ lottie-player {
 	                     "producto1 producto2"
 						 "producto3 producto4"
 						 "producto5 producto6"
-						 "producto7 producto8";
+						 "producto7 producto8"
+						 "producto9 producto10";
 
 	
 }
@@ -649,6 +723,10 @@ lottie-player {
 	grid-area: producto8;
 }
 
+.limpieza .producto9 {
+	grid-area: producto9;
+}
+
 @media screen  and  (max-width: 768px){
 .limpieza { grid-template-areas: "tituloab tituloab"
 	                                 "producto1 producto1"
@@ -658,7 +736,9 @@ lottie-player {
 									 "producto5 producto5"
 									 "producto6 producto6"
 									 "producto7 producto7"
-									 "producto8 producto8";}
+									 "producto8 producto8"
+									 "producto9 producto9"
+									 "producto10 producto11";}
 
 }
 

@@ -676,6 +676,12 @@ cotizar2();
     document.getElementById('description').value = `de Caucho`;
     cotizar2();   
   }
+
+  function agp32() {
+    document.getElementById('title').value =  `Palas Platicas`;
+      document.getElementById('description').value = `Universales`;
+      cotizar2();   
+    }
   
   //maquinaria> 
   
@@ -712,6 +718,12 @@ cotizar2();
     cotizar2();   
   }
 
+
+  function agp33() {
+    document.getElementById('title').value =  `Alcohol al 70%`;
+    document.getElementById('description').value = `Antiséptico`;
+    cotizar2();   
+  }
 
   function msjcarrito() {
     Swal.fire({
