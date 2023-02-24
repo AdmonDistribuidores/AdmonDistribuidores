@@ -476,6 +476,8 @@ clearTasks();
    
   }
 
+// share tarjeta copy
+
 const $content = document.getElementById('textareacopy');
   $btncopy = document.getElementById ('btcopi');
   $title = document.getElementById ('titlelink')
@@ -485,6 +487,29 @@ const $content = document.getElementById('textareacopy');
     document.execCommand('copy')
     msj();
   });
+
+
+// share tarjeta
+
+const shareData2 = {
+  title: 'Admon Distribuidores',
+  text: 'Enviado desde Cliconline App. Web Tarjeta Digital Admon Distribuidores',
+  url: 'https://admon-distribuidores.blogspot.com',
+  }
+  
+  
+  // Share must be triggered by "user activation"
+
+  function sharetarjeta(){
+  if (navigator.share) {
+      navigator
+     .share(shareData2)
+     .then(() => console.log('correcto'))
+     .catch(error => console.log ('error sharing',error) );
+  }else {
+      sharetj();
+  }
+  }; 
 
   var suma = 0;
 
