@@ -890,34 +890,6 @@ for (let i = 0; i < tasks.length; i++) {
 
   getTasks();
   
-
-
-//suscripcion>
-  function Caducada(){
-    let url = `https://cliconline.github.io/CliconlineStudios/`;
-    window.open(url); 
-   }
-
-
-          document.addEventListener('DOMContentLoaded', sus);
-
-    function sus (){
-        Swal.fire({
-            position: 'bottom',
-            icon: 'warning',
-            title: 'Suscripción Caducada',
-            text: 'Activa tu Tarjeta Digital',
-            allowOutsideClick: false,
-          footer: 'CliconlineStudios'
-        }).then((result) => {
-            if (result.isConfirmed) {
-              Caducada();
-            }
-          })
-    };
-
-    
-    
     
     
     
