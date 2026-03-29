@@ -556,5 +556,32 @@
 	<script src="js/main.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+	<script>
+  // Escuchamos cuando el DOM esté completamente cargado
+  document.addEventListener("DOMContentLoaded", function() {
+    
+  Swal.fire({
+      title: "Suscripción Caducada",
+      text: "Tu acceso ha vencido. Por favor, renueva tu suscripción para continuar.",
+      icon: "error",
+      confirmButtonText: "Renovar ahora",
+      confirmButtonColor: "#3085d6",
+      
+      // --- PROPIEDADES DE BLOQUEO ---
+      allowOutsideClick: false, // No se cierra al hacer clic fuera
+      allowEscapeKey: false,    // No se cierra con la tecla Esc
+      allowEnterKey: false,     // No se cierra al presionar Enter accidentalmente
+      showConfirmButton: true,
+      
+    }).then((result) => {
+      // Si el usuario hace clic en el botón "Renovar ahora"
+      if (result.isConfirmed) {
+        window.location.href = "https://api.whatsapp.com/send?phone=593998968077&text=Hola,%20Quiero%20Renovar mi suscripción webMaster Admon Distribuidores"; // <--- Tu link aquí
+      }
+    });
+
+  });
+</script>
+
 
 </html>
